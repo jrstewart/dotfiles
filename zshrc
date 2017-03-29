@@ -123,6 +123,4 @@ PROMPT='
 %(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '
 # RPROMPT='[%{$GREEN%}$(ruby --version | cut -d " " -f 2)%{$WHITE%}]'
 
-export HOMEBREW_GITHUB_API_TOKEN="3bd1cd0d1787bdf0a0c53b9d5a60829432a3c2d3"
-
 eval "$(rbenv init -)"
