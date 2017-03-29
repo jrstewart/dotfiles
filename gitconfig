@@ -1,0 +1,41 @@
+# -*- mode: gitconfig -*-
+# vi: set ft=gitconfig :
+
+[alias]
+  sla = log --oneline --decorate --graph --all
+  glog = log -E -i --grep
+[color]
+  ui = true
+[core]
+  editor = vim
+  excludesfile = ~/.gitignore
+  pager = less -F -X
+[diff]
+  tool = Kaleidoscope
+[difftool]
+  prompt = false
+[difftool "Kaleidoscope"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[fetch]
+  prune = true
+[merge]
+  ff = only
+  tool = Kaleidoscope
+[mergetool]
+  prompt = false
+  keepBackup = false
+[mergetool "Kaleidoscope"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustExitCode = true
+[push]
+  default = upstream
+[rebase]
+  autosquash = true
+[user]
+  name = Jason Stewart
+  email = jason.r.stewart@gmail.com
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
