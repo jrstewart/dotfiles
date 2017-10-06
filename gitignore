@@ -13,3 +13,4 @@ emacs.d/projects.el
 *.iml
 .idea
 .clover
+.vscode

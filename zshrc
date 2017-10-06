@@ -50,7 +50,9 @@ MAILCHECK=0
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man colorize github vagrant osx zsh-syntax-highlighting)
+plugins=(git colored-man colorize github osx zsh-syntax-highlighting)
+fpath=(/usr/local/share/zsh-completions $fpath)
+autoload -U compinit && compinit
 
 # User configuration
 
@@ -124,3 +126,19 @@ PROMPT='
 # RPROMPT='[%{$GREEN%}$(ruby --version | cut -d " " -f 2)%{$WHITE%}]'
 
 eval "$(rbenv init -)"
+
+alias mvim='/Applications/MacVim.app/Contents/bin/mvim'
+
+# Docker aliases
+alias dcb='docker-compose build'
+alias dcr='docker-compose run'
+alias dcs='docker-compose start'
+alias dcp='docker-compose stop'
+alias dcu='docker-compose up'
+alias dcl='docker-compose logs'
+
+# Python/Django Docker aliases
+alias dcrmm='docker-compose run web python manage.py makemigrations'
+alias dcrm='docker-compose run web python manage.py migrate'
+
+export ERL_AFLAGS="-kernel shell_history enabled"
