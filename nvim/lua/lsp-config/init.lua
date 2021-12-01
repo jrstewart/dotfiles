@@ -37,7 +37,7 @@ end
 --- Elixir
 
 lspconfig.elixirls.setup({
-  cmd = {vim.fn.expand('~/Projects/elixir-ls/rel/language_server.sh')},
+  cmd = {vim.fn.expand('~/Projects/elixir-ls/language_server.sh')},
   capabilities = capabilities,
   on_attach = on_attach,
   settings = {
