@@ -26,7 +26,10 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 --- Standard LSP servers
 
-local servers = {'html'}
+local servers = {
+  'html',
+  'solargraph', -- Ruby
+}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup({
     capabilities = capabilities,
