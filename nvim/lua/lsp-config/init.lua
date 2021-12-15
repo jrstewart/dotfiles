@@ -28,7 +28,9 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 local servers = {
   'html',
-  'solargraph', -- Ruby
+  'rust_analyzer',
+  'solargraph',
+  'tsserver',
 }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup({
@@ -46,9 +48,9 @@ lspconfig.elixirls.setup({
   settings = {
     elixirLS = {
       dialyzerEnabled = true,
-      fetchDeps = false
-    }
-  }
+      fetchDeps = false,
+    },
+  },
 })
 
 --- Lua
