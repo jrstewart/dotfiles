@@ -5,5 +5,6 @@ require('nvim-treesitter.configs').setup({
     enable = true,
     additional_vim_regex_highlighting = false,
   },
-  ignore_install = {'haskell'},
+  ignore_install = {'elixir', 'haskell'},
+  indent = {enabled = true},
 })
