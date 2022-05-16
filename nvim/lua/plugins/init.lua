@@ -12,6 +12,7 @@ return require('packer').startup(function()
   use 'windwp/nvim-autopairs'
 
   --- languages
+  use 'dart-lang/dart-vim-plugin'
   use 'elixir-editors/vim-elixir'
   use 'wlangstroth/vim-racket'
 

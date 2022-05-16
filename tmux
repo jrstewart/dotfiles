@@ -1,3 +1,5 @@
+set -g default-shell "/usr/bin/fish"
+
 # improve colors
 set -g default-terminal "screen-256color"
 set -as terminal-overrides ',*:Tc'

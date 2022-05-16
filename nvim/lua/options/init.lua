@@ -46,7 +46,6 @@ vim.bo.tabstop = 2
 
 vim.cmd('color gruvbox')
 
-
 -- local opt = vim.opt
 
 --- Basic settings

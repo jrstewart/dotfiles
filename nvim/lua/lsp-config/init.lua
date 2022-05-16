@@ -39,6 +39,19 @@ for _, lsp in ipairs(servers) do
   })
 end
 
+--- Dart
+
+local handle = io.popen('asdf where dart')
+local dart_path = handle:read("*a")
+dart_path = string.gsub(dart_path, "^%s*(.-)%s*$", "%1")
+handle:close()
+
+lspconfig.dartls.setup({
+  cmd = {'dart', vim.fn.expand(dart_path .. '/dart-sdk/bin/snapshots/analysis_server.dart.snapshot'), '--lsp'},
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
 --- Elixir
 
 lspconfig.elixirls.setup({
@@ -67,7 +80,7 @@ else
 end
 
 local sumneko_root_path = vim.fn.expand('~/Projects/lua-language-server')
-local sumneko_binary = sumneko_root_path .. '/bin/' .. system_name .. '/lua-language-server'
+local sumneko_binary = sumneko_root_path .. '/bin/lua-language-server'
 
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, 'lua/?.lua')
