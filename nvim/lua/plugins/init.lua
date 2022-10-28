@@ -14,6 +14,7 @@ return require('packer').startup(function()
   --- languages
   use 'dart-lang/dart-vim-plugin'
   use 'elixir-editors/vim-elixir'
+  use 'simrat39/rust-tools.nvim'
   use 'wlangstroth/vim-racket'
 
   --- UI
@@ -31,6 +32,7 @@ return require('packer').startup(function()
     'nvim-treesitter/nvim-treesitter',
     run = ":TSUpdate"
   }
+  use 'mfussenegger/nvim-dap'
 
   -- language server configurations
   use 'neovim/nvim-lspconfig'

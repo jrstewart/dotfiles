@@ -10,9 +10,9 @@ end
 local cmp = require('cmp')
 local lspkind = require('lspkind')
 cmp.setup({
-  completion = {
-    autocomplete = false,
-  },
+  -- completion = {
+  --   autocomplete = false,
+  -- },
   formatting = {
     format = lspkind.cmp_format({with_text = true, max_width = 50}),
   },

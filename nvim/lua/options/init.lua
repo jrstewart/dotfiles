@@ -45,39 +45,3 @@ vim.bo.shiftwidth = 2
 vim.bo.tabstop = 2
 
 vim.cmd('color gruvbox')
-
--- local opt = vim.opt
-
---- Basic settings
--- opt.joinspaces = false
--- opt.laststatus = 2
--- opt.list listchars=tab:??,trail:?,nbsp:?
--- opt.list listchars=tab:??,trail:?,nbsp:?,extends:?,precedes:?
--- opt.mouse=
--- opt.number = true
--- opt.omnifunc=syntaxcomplete#Complete
--- opt.ruler = true
--- opt.scrolloff = 5
--- opt.shiftwidth = 2
--- opt.showcmd = true
--- opt.smartcase = true
--- opt.smartindent = true
--- opt.spelllang = "en_us"
--- opt.splitbelow = true
--- opt.splitright = true
--- opt.swapfile = false
--- opt.tabstop = 2
--- opt.tags+=.tags/tags
--- opt.title
--- opt.visualbell
--- opt.wildignore+=*.o,*~,**/.git/**,**/tmp/**,**/node_modules/**,**/_build/**,**/deps/**,**/target/**,**/uploads/**
--- opt.wildmenu
--- opt.wildmode=list:longest
--- opt.writebackup = false
-
---- Use code folding
---- Remove underline in folded lines
--- set foldmethod=marker
--- set foldlevelstart=2
--- set fillchars="fold: "
--- hi Folded term=NONE cterm=NONE gui=NONE ctermbg=NONE

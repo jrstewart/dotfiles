@@ -17,18 +17,17 @@ local on_attach = function(_, bufnr)
   buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-  buf_set_keymap('n', '<space>cf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  buf_set_keymap('n', '<space>cf', '<cmd>lua vim.lsp.buf.format({ async = true })<CR>', opts)
 end
 
 local lspconfig = require('lspconfig')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 --- Standard LSP servers
 
 local servers = {
   'html',
-  'rust_analyzer',
   'solargraph',
   'tsserver',
 }
@@ -65,6 +64,31 @@ lspconfig.elixirls.setup({
     },
   },
 })
+
+--- Rust
+
+local rust_opts = {
+  tools = {
+    autoSetHints = true,
+    inlay_hints = {
+      show_parameter_hints = false,
+      parameter_hints_prefix = "",
+      other_hints_prefix = "",
+    },
+  },
+  server = {
+    on_attach = on_attach,
+    settings = {
+      ['rust-analyzer'] = {
+        checkOnSave = {
+          command = 'clippy'
+        },
+      }
+    }
+  },
+}
+
+require('rust-tools').setup(rust_opts)
 
 --- Lua
 
