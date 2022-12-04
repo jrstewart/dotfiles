@@ -2,6 +2,9 @@ set -g -x fish_greeting ""
 
 set -xU ERL_AFLAGS "-kernel shell_history enabled"
 
+fish_add_path -a ~/.cargo/bin
+fish_add_path -a ~/bin
+
 export AWS_DEFAULT_REGION=us-east-1
 export AWS_PAGER=""
 export CHROME_EXECUTABLE="google-chrome-stable"
@@ -23,4 +26,4 @@ alias dcp='docker-compose stop'
 alias dcu='docker-compose up'
 alias dcl='docker-compose logs'
 
-source /opt/asdf-vm/asdf.fish
+source ~/.asdf/asdf.fish
