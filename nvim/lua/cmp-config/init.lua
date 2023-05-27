@@ -7,12 +7,23 @@ local feedkey = function(key, mode)
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
 
+local cmp_config_context = require('cmp.config.context')
+local enabled = function()
+  if cmp_config_context.in_treesitter_capture("comment") == true or
+      cmp_config_context.in_syntax_group("Comment") then
+    return false
+  else
+    return true
+  end
+end
+
 local cmp = require('cmp')
 local lspkind = require('lspkind')
 cmp.setup({
   -- completion = {
   --   autocomplete = false,
   -- },
+  enabled = enabled,
   formatting = {
     format = lspkind.cmp_format({with_text = true, max_width = 50}),
   },

@@ -10,10 +10,11 @@ return require('packer').startup(function()
   use 'tpope/vim-projectionist'
   use 'tpope/vim-surround'
   use 'windwp/nvim-autopairs'
+  use 'ntpeters/vim-better-whitespace'
 
   --- languages
   use 'dart-lang/dart-vim-plugin'
-  use 'elixir-editors/vim-elixir'
+  -- use 'elixir-editors/vim-elixir'
   use 'simrat39/rust-tools.nvim'
   use 'wlangstroth/vim-racket'
 
