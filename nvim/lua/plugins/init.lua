@@ -4,6 +4,7 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
   --- text editing and searching
+  use 'christoomey/vim-tmux-navigator'
   use 'tpope/vim-commentary'
   use 'tpope/vim-endwise'
   use 'tpope/vim-fugitive'
