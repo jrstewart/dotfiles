@@ -15,6 +15,7 @@ return require('packer').startup(function()
 
   --- languages
   use 'dart-lang/dart-vim-plugin'
+  use 'fladson/vim-kitty'
   -- use 'elixir-editors/vim-elixir'
   use 'simrat39/rust-tools.nvim'
   use 'wlangstroth/vim-racket'
