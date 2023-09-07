@@ -1,0 +1,42 @@
+# -*- mode: gitconfig -*-
+# vi: set ft=gitconfig :
+
+[alias]
+  sla = log --oneline --decorate --graph --all
+  glog = log -E -i --grep
+[color]
+  ui = true
+[core]
+  editor = nvim
+  excludesfile = ~/.gitignore
+  pager = less -F -X
+[fetch]
+  prune = true
+[merge]
+  ff = only
+	tool = bc
+[mergetool]
+  prompt = false
+  keepBackup = false
+	bc = trustExitCode
+[push]
+  default = upstream
+[rebase]
+  autosquash = true
+[user]
+  name = Jason Stewart
+  email = jason.stewart@thescore.com
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+[pull]
+  ff = only
+[init]
+  defaultBranch = main
+[diff]
+	tool = bc
+[difftool]
+	prompt = false
+	bc = trustExitCode
