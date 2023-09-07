@@ -9,6 +9,11 @@ export AWS_DEFAULT_REGION=us-east-1
 export AWS_PAGER=""
 export CHROME_EXECUTABLE="google-chrome-stable"
 
+# System aliases
+alias grep="rg"
+alias ls='exa --icons'
+alias ll='exa -l --icons'
+
 # Ruby aliases
 alias b='bundle'
 alias be='bundle exec'
