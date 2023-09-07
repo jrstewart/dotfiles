@@ -53,6 +53,16 @@ return {
     servers = {
       -- "pyright"
     },
+    config = {
+      elixirls = {
+        settings = {
+          elixirLS = {
+            dialyzerEnabled = true,
+            fetchDeps = false,
+          },
+        },
+      }
+    }
   },
 
   -- Configure require("lazy").setup() options
